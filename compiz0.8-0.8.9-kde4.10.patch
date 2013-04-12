@@ -1,0 +1,31 @@
+diff -urN core-compiz-0.8/kde/window-decorator-kde4/window.cpp core-compiz-0.8-patched/kde/window-decorator-kde4/window.cpp
+--- core-compiz-0.8/kde/window-decorator-kde4/window.cpp	2012-11-20 06:27:29.000000000 +1100
++++ core-compiz-0.8-patched/kde/window-decorator-kde4/window.cpp	2013-04-13 01:56:15.656392774 +1100
+@@ -487,6 +487,15 @@
+     showWindowMenu (pos.bottomLeft ());
+ }
+ 
++void KWD::Window::showApplicationMenu (const QPoint &p)
++{
++}
++
++bool KWD::Window::menuAvailable () const
++{
++    return false;
++}
++
+ KWD::Options::MouseCommand
+ KWD::Window::buttonToCommand (Qt::MouseButtons button)
+ {
+diff -urN core-compiz-0.8/kde/window-decorator-kde4/window.h core-compiz-0.8-patched/kde/window-decorator-kde4/window.h
+--- core-compiz-0.8/kde/window-decorator-kde4/window.h	2012-11-20 06:27:29.000000000 +1100
++++ core-compiz-0.8-patched/kde/window-decorator-kde4/window.h	2013-04-13 01:56:15.656392774 +1100
+@@ -88,6 +88,8 @@
+ 	virtual void processMousePressEvent (QMouseEvent *);
+ 	virtual void showWindowMenu (const QRect &);
+ 	virtual void showWindowMenu (const QPoint &);
++	virtual void showApplicationMenu (const QPoint &);
++	virtual bool menuAvailable () const;
+ 	virtual void performWindowOperation (WindowOperation);
+ 	virtual void setMask (const QRegion &, int);
+ 	virtual bool isPreview (void) const;

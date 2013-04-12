@@ -54,6 +54,8 @@ Source3:	kstylerc.xinit
 # Make sure we don't conflict with main Compiz
 Patch0:		compiz0.8-0.8.9-soversion.patch
 
+Patch1:		compiz0.8-0.8.9-kde4.10.patch
+
 # Mandriva Patches
 # git format-patch --start-number 500 mdv-0.8.0-cherry-picks..mdv-0.8.0-patches
 Patch500:	0500-Fix-memory-leak-in-KDE3-window-decorator.patch
