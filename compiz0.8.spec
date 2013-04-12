@@ -12,7 +12,7 @@
 %if %{git}
 %define srcname core-%{oname}-%{oversion}.tar.bz2
 %define distname core-%{oname}-%{oversion}
-%define rel 0.%{git}.1
+%define rel 0.%{git}.2
 %else
 %define srcname %{oname}-%{version}.tar.bz2
 %define distname %{oname}-%{version}
@@ -164,6 +164,7 @@ Summary:	Development files for compiz
 Group:		Development/X11
 Provides:	%{name}-devel = %{version}-%{release}
 Requires:	%{libname} = %{version}-%{release}
+Requires:	pkgconfig(gl)
 Conflicts:	%{_lib}compiz-devel
 
 %description -n %{devname}
