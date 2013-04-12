@@ -1,0 +1,34 @@
+From d1c099bbc40c2bfd124aef0a595a882003b1cc74 Mon Sep 17 00:00:00 2001
+From: Colin Guthrie <git@colin.guthr.ie>
+Date: Thu, 2 Oct 2008 20:30:44 +0100
+Subject: [PATCH 501/505] Add Mandriva graphic to the top of the cube
+
+---
+ metadata/cube.xml.in |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/metadata/cube.xml.in b/metadata/cube.xml.in
+index 7e9a42b..9e964fe 100644
+--- a/metadata/cube.xml.in
++++ b/metadata/cube.xml.in
+@@ -102,7 +102,7 @@
+ 		    <option name="scale_image" type="bool">
+ 			<_short>Scale image</_short>
+ 			<_long>Scale images to cover top face of cube</_long>
+-			<default>false</default>
++			<default>true</default>
+ 		    </option>
+ 		    <option name="images" type="list">
+ 			<_short>Image files</_short>
+@@ -110,7 +110,7 @@
+ 			<type>string</type>
+ 			<hints>file;image;</hints>
+ 			<default>
+-			    <value>freedesktop</value>
++			    <value>/usr/share/compositing-wm/mandriva-top.png</value>
+ 			</default>
+ 		    </option>
+ 		    <option name="adjust_image" type="bool">
+-- 
+1.6.1.2
+

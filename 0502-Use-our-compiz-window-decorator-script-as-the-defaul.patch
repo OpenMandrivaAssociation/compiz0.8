@@ -1,0 +1,24 @@
+From 9e7cbde36ca1ea4d190455b8bd0486ba4283d98f Mon Sep 17 00:00:00 2001
+From: Colin Guthrie <git@colin.guthr.ie>
+Date: Thu, 2 Oct 2008 20:31:22 +0100
+Subject: [PATCH 502/505] Use our compiz-window-decorator script as the default decorator
+
+---
+ metadata/decoration.xml.in |    1 +
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+diff --git a/metadata/decoration.xml.in b/metadata/decoration.xml.in
+index 3be23c5..de50ec0 100644
+--- a/metadata/decoration.xml.in
++++ b/metadata/decoration.xml.in
+@@ -50,6 +50,7 @@
+ 	    <option name="command" type="string">
+ 		<_short>Command</_short>
+ 		<_long>Decorator command line that is executed if no decorator is already running</_long>
++		<default>compiz-window-decorator</default>
+ 	    </option>
+ 	    <option name="mipmap" type="bool">
+ 		<_short>Mipmap</_short>
+-- 
+1.6.1.2
+

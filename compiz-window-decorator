@@ -1,0 +1,25 @@
+#!/bin/sh
+
+#using KDE
+if [ -n "$KDE_FULL_SESSION" ]; then
+  if [ "$KDE_SESSION_VERSION" -eq "4" ]; then
+    DECORATOR=`which kde4-window-decorator 2>/dev/null`
+  else
+    DECORATOR=`which kde-window-decorator 2>/dev/null`
+  fi
+elif [ ! -z "$DESKTOP_SESSION" -a "$DESKTOP_SESSION" = "01KDE4" ]; then
+    DECORATOR=`which kde4-window-decorator 2>/dev/null`
+elif [ ! -z "$DESKTOP_SESSION" -a "$DESKTOP_SESSION" = "05KDE3" ]; then
+    DECORATOR=`which kde-window-decorator 2>/dev/null`
+fi
+
+[ -z "$DECORATOR" ] && DECORATOR=`which gtk-window-decorator 2>/dev/null`
+[ -z "$DECORATOR" ] && DECORATOR=`which emerald 2>/dev/null`
+[ -z "$DECORATOR" ] && DECORATOR=`which kde4-window-decorator 2>/dev/null`
+[ -z "$DECORATOR" ] && DECORATOR=`which kde-window-decorator 2>/dev/null`
+
+if [ -n "$DECORATOR" ]; then 
+  exec $DECORATOR "$@"
+else
+  echo "no compiz window decorator detected"
+fi

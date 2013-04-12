@@ -1,0 +1,25 @@
+From 5114f601eabd8942e9e52e46a9f0842aba4a97a4 Mon Sep 17 00:00:00 2001
+From: Colin Guthrie <git@colin.guthr.ie>
+Date: Thu, 2 Oct 2008 20:34:52 +0100
+Subject: [PATCH 505/505] Fix KDE3 linking by changing the directory order
+
+---
+ configure.ac |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 8663ead..835345e 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -454,7 +454,7 @@ if test "x$use_kde" = "xyes"; then
+ 			[use_kde=yes], [use_kde=no])
+ 
+       KDE_CFLAGS="$QT_CXXFLAGS -I$kdeincs"
+-      KDE_LIBS="$QT_LIBS -L$kdelibs -lkdecore -lkdecorations -ldbus-qt-1"
++      KDE_LIBS="-L$kdelibs $QT_LIBS -lkdecore -lkdecorations -ldbus-qt-1"
+ 
+       QT_MOC=$QTDIR/bin/moc
+       DCOPIDL=$kdedir/bin/dcopidl
+-- 
+1.6.1.2
+

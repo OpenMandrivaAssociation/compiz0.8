@@ -1,0 +1,25 @@
+From 213633b3534a665678aa139330cb99eefe45894e Mon Sep 17 00:00:00 2001
+From: Colin Guthrie <git@colin.guthr.ie>
+Date: Thu, 2 Oct 2008 20:32:27 +0100
+Subject: [PATCH 503/505] Do not put window decorations on KDE screensaver
+
+---
+ metadata/decoration.xml.in |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+diff --git a/metadata/decoration.xml.in b/metadata/decoration.xml.in
+index de50ec0..c7d8e32 100644
+--- a/metadata/decoration.xml.in
++++ b/metadata/decoration.xml.in
+@@ -60,7 +60,7 @@
+ 	    <option name="decoration_match" type="match">
+ 		<_short>Decoration windows</_short>
+ 		<_long>Windows that should be decorated</_long>
+-		<default>any</default>
++		<default>any &amp; !name=kdesktop_lock</default>
+ 	    </option>
+ 	    <option name="shadow_match" type="match">
+ 		<_short>Shadow windows</_short>
+-- 
+1.6.1.2
+

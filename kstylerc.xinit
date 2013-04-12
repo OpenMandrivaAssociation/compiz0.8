@@ -1,0 +1,5 @@
+#!/bin/sh
+SESSION=$1
+if [ "${SESSION}" = "KDE" ] && [ ! -e "$HOME/.mdv_no_auto_shadow" ]; then
+    perl -MMDK::Common -e "update_gnomekderc('$HOME/.qt/kstylerc', 'Settings', MenuDropShadow => bool2text('$COMPOSITING_WM_START' ne 'yes'))"
+fi

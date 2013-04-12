@@ -1,0 +1,12 @@
+diff -urN core-compiz-0.8/libdecoration/Makefile.am core-compiz-0.8-patched/libdecoration/Makefile.am
+--- core-compiz-0.8/libdecoration/Makefile.am	2012-11-20 06:27:29.000000000 +1100
++++ core-compiz-0.8-patched/libdecoration/Makefile.am	2013-04-11 20:30:20.969025341 +1100
+@@ -1,7 +1,7 @@
+ lib_LTLIBRARIES = libdecoration.la
+ 
+ libdecoration_la_LIBADD  = @DECORATION_LIBS@ -lm
+-libdecoration_la_LDFLAGS = -no-undefined
++libdecoration_la_LDFLAGS = -version-number 8:0:0 -no-undefined
+ libdecoration_la_SOURCES = decoration.c
+ 
+ INCLUDES = @DECORATION_CFLAGS@ -I$(top_srcdir)/include

@@ -1,0 +1,42 @@
+From 2973e8cebfe0915b3c2be1aae95962005a9e07a8 Mon Sep 17 00:00:00 2001
+From: Colin Guthrie <git@colin.guthr.ie>
+Date: Thu, 2 Oct 2008 20:29:16 +0100
+Subject: [PATCH 500/505] Fix memory leak in KDE3 window decorator
+
+---
+ kde/window-decorator/options.cpp |    5 +++++
+ kde/window-decorator/options.h   |    2 +-
+ 2 files changed, 6 insertions(+), 1 deletions(-)
+
+diff --git a/kde/window-decorator/options.cpp b/kde/window-decorator/options.cpp
+index 46b5059..8606597 100644
+--- a/kde/window-decorator/options.cpp
++++ b/kde/window-decorator/options.cpp
+@@ -32,6 +32,11 @@ KWD::Options::Options (KConfig *config): KDecorationOptions (), mConfig (config)
+     updateSettings ();
+ }
+ 
++KWD::Options::~Options()
++{
++    delete d;
++}
++
+ unsigned long
+ KWD::Options::updateSettings (void)
+ {
+diff --git a/kde/window-decorator/options.h b/kde/window-decorator/options.h
+index 785e855..9014408 100644
+--- a/kde/window-decorator/options.h
++++ b/kde/window-decorator/options.h
+@@ -77,7 +77,7 @@ class Options : public KDecorationOptions
+ 	};
+ 
+ 	Options (KConfig *config);
+-
++	~Options();
+ 	virtual unsigned long updateSettings (void);
+ 
+ 	WindowOperation operationTitlebarDblClick (void)
+-- 
+1.6.1.2
+
