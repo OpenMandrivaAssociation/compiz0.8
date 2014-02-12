@@ -12,7 +12,7 @@
 %if %{git}
 %define srcname core-%{oname}-%{oversion}.tar.bz2
 %define distname core-%{oname}-%{oversion}
-%define rel 0.%{git}.3
+%define rel 0.%{git}.4
 %else
 %define srcname %{oname}-%{version}.tar.bz2
 %define distname %{oname}-%{version}
@@ -60,7 +60,7 @@ Patch2:		compiz0.8-0.8.9-kde4.11.patch
 # Mandriva Patches
 # git format-patch --start-number 500 mdv-0.8.0-cherry-picks..mdv-0.8.0-patches
 Patch500:	0500-Fix-memory-leak-in-KDE3-window-decorator.patch
-Patch501:	0501-Add-Mandriva-graphic-to-the-top-of-the-cube.patch
+Patch501:	0501-Add-ROSA-graphic-to-the-top-of-the-cube.patch
 Patch502:	0502-Use-our-compiz-window-decorator-script-as-the-defaul.patch
 Patch503:	0503-Do-not-put-window-decorations-on-KDE-screensaver.patch
 Patch504:	0504-Also-check-for-tfp-in-server-extensions.patch
@@ -117,7 +117,7 @@ BuildRequires:	intltool
 Requires(post): GConf2
 Requires(preun): GConf2
 Requires:	%{libname} = %{version}-%{release}
-Requires:	compositing-wm-common
+Requires:	compositing-wm-common >= 2012.1
 Provides:	compositing-wm%{oversion} = %{version}-%{release}
 Requires:	compiz-decorator%{oversion}
 Conflicts:	%{oname} > 0.9
