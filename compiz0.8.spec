@@ -12,7 +12,7 @@
 %if %{git}
 %define srcname core-%{oname}-%{oversion}.tar.bz2
 %define distname core-%{oname}-%{oversion}
-%define rel 0.%{git}.2
+%define rel 0.%{git}.3
 %else
 %define srcname %{oname}-%{version}.tar.bz2
 %define distname %{oname}-%{version}
@@ -26,7 +26,7 @@ Release:	%{rel}
 Summary:	OpenGL composite manager for Xgl and AIGLX
 Group:		System/X11
 License:	GPLv2+ and LGPLv2+ and MIT
-URL:		http://www.compiz.org/
+Url:		http://www.compiz.org/
 Source:		http://cgit.compiz.org/compiz/core/snapshot/%{srcname}
 Source1:	compiz.defaults
 Source2:	compiz-window-decorator
@@ -55,6 +55,7 @@ Source3:	kstylerc.xinit
 Patch0:		compiz0.8-0.8.9-soversion.patch
 
 Patch1:		compiz0.8-0.8.9-kde4.10.patch
+Patch2:		compiz0.8-0.8.9-kde4.11.patch
 
 # Mandriva Patches
 # git format-patch --start-number 500 mdv-0.8.0-cherry-picks..mdv-0.8.0-patches
