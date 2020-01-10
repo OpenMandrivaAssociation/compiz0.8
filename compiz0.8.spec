@@ -177,7 +177,7 @@ This package provides development files for compiz.
 
 %prep
 %setup -q -n %{distname}
-%apply_patches
+%autopatch -p1
 
 %build
 %if %{git}
