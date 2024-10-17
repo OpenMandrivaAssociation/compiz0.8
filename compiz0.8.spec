@@ -26,7 +26,7 @@ Release:	%{rel}
 Summary:	OpenGL composite manager for Xgl and AIGLX
 Group:		System/X11
 License:	GPLv2+ and LGPLv2+ and MIT
-Url:		http://www.compiz.org/
+Url:		https://www.compiz.org/
 Source:		http://cgit.compiz.org/compiz/core/snapshot/%{srcname}
 Source1:	compiz.defaults
 Source2:	compiz-window-decorator
